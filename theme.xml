@@ -1,0 +1,485 @@
+<!--
+theme name:		Zoid-NG
+Description:	Originally based on zoid but with missing systems and rewritten to support video and grid views.
+version:		2.0
+author:			MacGyverr (with original design by litzoZoid)
+email:			litzi@gmx.net
+license:		creative commons CC-BY-NC-SA
+
+Element color: Search and replace colors. Do not use spaces!
+	Red 	8b 00 00
+	Blue 	30 82 ce
+	Green 	50 d6 2c
+	Yellow	ef bc 0b
+	Orange	ef 71 0b
+	Purple	ac 0b ef
+	Teal	04 e9 f7
+	Pink	f5 02 97
+-->
+
+<theme>
+
+    <formatVersion>4</formatVersion>
+
+	<variables>
+		<backgroundColor>d9d9d9</backgroundColor>
+		<mainColor>f0f0f0a0</mainColor>
+		<secondaryColor>000000ff</secondaryColor>
+		<systemColor>3aa5ab</systemColor>
+		<mainFont>./assets/OPENSANS.TTF</mainFont>
+		<SystemButtons>./assets/helpbuttons/Playstation_Buttons_system.svg</SystemButtons>
+		<GamelistButtons>./assets/helpbuttons/Playstation_Buttons_gamelist.svg</GamelistButtons>
+		<GridlistButtons>./assets/helpbuttons/Playstation_Buttons_gridlist.svg</GridlistButtons>
+	</variables>
+	
+	<view name="system">
+
+		<image name="background" extra="true">
+			<tile>false</tile>
+			<pos>0 0</pos>
+			<origin>0 0</origin>
+			<size>1 1</size>
+			<path>./art/${system.theme}_art.jpg</path>
+		</image>
+		
+		<!--<image name="Overlay_System" extra="true">
+			<tile>false</tile>
+			<pos>0 0</pos>
+			<origin>0 0</origin>
+			<size>1 1</size>
+			<path>./assets/overlay_system.png</path>
+		</image>-->
+
+		<image name="logo">
+			<path>./art/${system.theme}.svg</path>
+        </image>
+
+		<image name="footer" extra="true">
+			<pos>0 1</pos>
+			<origin>0 1</origin>
+			<size>1 0.065</size>
+			<path>./assets/bar.png</path>
+		</image> 
+		
+		<helpsystem name="help">
+			<textColor>ffffff</textColor>
+			<iconColor>ffffff</iconColor>
+			<pos>1 1</pos>
+		</helpsystem>
+		
+		<image name="systembuttons" extra="true">
+			<pos>0.010 0.95</pos>
+			<origin>0.0 0.0</origin>
+			<size>1.00 0.036</size>	
+			<path>${SystemButtons}</path>
+		</image>
+		
+	</view>
+
+	<view name="basic, detailed, video, grid">
+	
+		<image name="header" extra="true">
+			<pos>0 0</pos>
+			<origin>0 0</origin>
+			<size>1 0.16</size>
+			<path>./assets/bar.png</path>
+		</image>
+
+		<image name="footer" extra="true">
+			<pos>0 1</pos>
+			<origin>0 1</origin>
+			<size>1 0.065</size>
+			<path>./assets/bar.png</path>
+		</image> 
+		
+		<image name="background">
+			<pos>0 0</pos>
+			<origin>0 0</origin>
+			<size>1 1</size>
+			<path>./assets/plain-background.jpg</path>
+		</image>
+		
+		<text name="system_name_1" extra="true">
+			<text>${system.fullName}</text>
+			<forceUppercase>1</forceUppercase>
+			<size>0.55 0.08</size>
+			<pos>0.427 0.01</pos>
+			<color>${secondaryColor}</color>
+			<fontPath>${mainFont}</fontPath>
+			<fontSize>0.055</fontSize>
+			<alignment>right</alignment>
+		</text>
+		
+		<image name="logo">
+			<tile>false</tile>
+			<path>./art/${system.theme}.svg</path>
+			<pos>0.025 0.079</pos>
+			<size>0.55 0.1</size>
+			<origin>0 0.5</origin>
+		</image>
+		
+	</view>
+	
+	<view name="basic, detailed, video">
+
+		<textlist name="gamelist">
+			<scrollSound>./assets/scroll.wav</scrollSound>
+			<selectedColor>ffffff</selectedColor>
+			<primaryColor>${mainColor}</primaryColor>
+			<secondaryColor>${secondaryColor}</secondaryColor>
+			<fontPath>${mainFont}</fontPath>
+			<fontSize>0.03</fontSize>
+			<forceUppercase>0</forceUppercase>
+			<pos>0.176 0.194</pos>
+			<size>0.648 0.68</size>
+			<alignment>center</alignment>
+			<horizontalMargin>0.01</horizontalMargin>
+		</textlist>	
+
+	</view>
+
+	<view name="basic, detailed, video">
+	
+		<helpsystem name="help">
+			<textColor>ffffff</textColor>
+			<iconColor>ffffff</iconColor>
+			<pos>1 1</pos>
+		</helpsystem>
+
+		<image name="systembuttons" extra="true">
+			<pos>0.020 0.95</pos>
+			<origin>0.0 0.0</origin>
+			<size>1 0.036</size>	
+			<path>${GamelistButtons}</path>
+		</image>
+		
+	</view>
+		
+	<view name="detailed">
+		
+		<image name="md_image">
+			<pos>0.093 0.22</pos>
+ <!--		<size>0.124 0.201</size>
+-->			<maxSize>.238 .32</maxSize>
+			<origin>.26 0</origin>
+		</image>
+	
+	</view>
+
+	<view name="detailed, video">	
+		
+		<text name="md_lbl_rating">
+			<color>${mainColor}</color>
+			<pos>0.276 0.21</pos>
+		</text>
+		
+		<text name="md_lbl_releasedate">
+			<color>${mainColor}</color>
+			<pos>0.276 0.25</pos>
+		</text>
+		
+		<text name="md_lbl_developer">
+			<color>${mainColor}</color>
+			<pos>0.276 0.29</pos>
+			<size>0.133 0.04</size>
+		</text>
+
+		<text name="md_lbl_publisher">
+			<color>${mainColor}</color>
+			<pos>0.276 0.33</pos>
+			<size>0.133 0.04</size>
+		</text>
+		
+		<text name="md_lbl_genre">
+			<color>${mainColor}</color>
+			<pos>0.276 0.37</pos>
+		</text>
+		
+		<text name="md_lbl_players">
+			<color>${mainColor}</color>
+			<pos>0.276 0.41</pos>
+		</text>
+
+		<text name="md_lbl_lastplayed">
+			<color>${mainColor}</color>
+			<pos>0.276 0.45</pos>
+		</text>
+
+		<text name="md_lbl_playcount">
+			<color>${mainColor}</color>
+			<pos>0.276 0.49</pos>
+		</text>
+		
+		<text name="md_playcount">
+			<color>${mainColor}</color>
+			<pos>0.409 0.49</pos>
+		</text>
+
+		<datetime name="md_lastplayed">
+			<color>${mainColor}</color>
+			<pos>0.409 0.45</pos>
+		</datetime>
+		
+		<text name="md_players">
+			<color>${mainColor}</color>
+			<pos>0.409 0.41</pos>
+		</text>
+		
+		<text name="md_genre">
+			<color>${mainColor}</color>
+			<pos>0.409 0.37</pos>
+			<size>0.20 0.04</size>
+		</text>
+
+		<text name="md_publisher">
+			<color>${mainColor}</color>
+			<pos>0.409 0.33</pos>
+			<size>0.24 0.04</size>
+		</text>
+		
+		<text name="md_developer">
+			<color>${mainColor}</color>
+			<pos>0.409 0.29</pos>
+			<size>0.24 0.04</size>
+		</text>
+		
+		<datetime name="md_releasedate">
+			<color>${mainColor}</color>
+			<pos>0.409 0.25</pos>
+		</datetime>
+		
+		<text name="md_description">
+			<color>${mainColor}</color>
+			<size>0.6 0.3</size>
+			<pos>0.025 0.577</pos>
+		</text>
+		
+		<textlist name="gamelist">
+			<scrollSound>./assets/scroll.wav</scrollSound>
+			<selectedColor>ffffff</selectedColor>
+			<primaryColor>${mainColor}</primaryColor>
+			<secondaryColor>${secondaryColor}</secondaryColor>
+			<fontPath>${mainFont}</fontPath>
+			<fontSize>0.03</fontSize>
+			<forceUppercase>0</forceUppercase>
+			<pos>0.615 0.20</pos>
+			<size>0.359 0.70</size>
+			<alignment>left</alignment>
+			<horizontalMargin>0.01</horizontalMargin>
+		</textlist>	
+		
+		<rating name="md_rating">
+			<pos>0.409 0.216</pos>
+			<size>0.028 0.028</size>
+			<filledPath>./assets/filled_rating.svg</filledPath>
+			<unfilledPath>./assets/unfilled_rating.svg</unfilledPath>
+		</rating>
+	
+	</view>
+	
+	<view name="video">
+		
+ <!--	<image name="md_marquee">
+			<origin>0 0</origin>
+			<pos>0.800 0.01</pos>
+			<maxSize>0.19 0.10</maxSize>
+		</image>
+-->		  
+		<video name="md_video">
+			<pos>0.093 0.22</pos>
+ <!--		<size>0.124 0.201</size>
+-->			<maxSize>.238 .32</maxSize>
+			<origin>.26 0</origin>
+			<delay>2.0</delay>
+		<!--<default>./assets/static.mp4</default>  -->
+			<showSnapshotNoVideo>true</showSnapshotNoVideo>
+			<showSnapshotDelay>true</showSnapshotDelay>
+		</video>
+		
+	</view>
+	
+	<view name="grid">
+		
+		<helpsystem name="help">
+			<textColor>ffffff</textColor>
+			<iconColor>ffffff</iconColor>
+			<pos>1 1</pos>
+		</helpsystem>
+
+		<image name="systembuttons" extra="true">
+			<pos>0.020 0.95</pos>
+			<origin>0.0 0.0</origin>
+			<size>1 0.036</size>	
+			<path>${GridlistButtons}</path>
+		</image>
+		
+		<imagegrid name="gamegrid">
+			<pos>0.025 0.18</pos>
+			<size>0.950 0.73</size>
+			<margin>0.02 0.02</margin>
+<!--		<gameImage>:/button_filled.png</gameImage>
+			<folderImage>:/button_filled.png</folderImage>
+-->		</imagegrid>
+
+		<gridtile name="default">
+			<size>0.173 0.23</size>
+			<backgroundColor>00000000</backgroundColor>
+		</gridtile>
+
+		<gridtile name="selected">
+			<backgroundColor>00000000</backgroundColor>
+		</gridtile>
+		
+		<text name="md_name">
+			<color>${secondaryColor}</color>
+			<alignment>right</alignment>
+			<pos>0.55 0.95</pos>
+			<size>0.328 0.028</size>
+		</text>
+		
+		<text name="md_lbl_rating">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+		
+		<text name="md_lbl_releasedate">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+		
+		<text name="md_lbl_developer">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+
+		<text name="md_lbl_publisher">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+		
+		<text name="md_lbl_genre">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+		
+		<text name="md_lbl_players">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+
+		<text name="md_lbl_lastplayed">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+
+		<text name="md_lbl_playcount">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+		
+		<text name="md_playcount">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+
+		<datetime name="md_lastplayed">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</datetime>
+		
+		<text name="md_players">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+		
+		<text name="md_genre">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+
+		<text name="md_publisher">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+		
+		<text name="md_developer">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+		
+		<datetime name="md_releasedate">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</datetime>
+		
+		<text name="md_description">
+			<color>${mainColor}</color>
+			<pos>1 1</pos>
+			<size>0 0</size>
+		</text>
+		
+		<rating name="md_rating">
+			<pos>0.89 0.95</pos>
+			<size>0.035 0.035</size>
+			<filledPath>./assets/filled_rating.svg</filledPath>
+			<unfilledPath>./assets/unfilled_rating.svg</unfilledPath>
+		</rating>
+
+	</view>
+
+<feature supported="carousel">
+  
+	<view name="system">
+
+		<carousel name="systemcarousel">
+		  <type>horizontal</type>
+		  <pos>0 0.4</pos> 
+		  <size>1 .2</size> 
+		  <color>${mainColor}</color>
+		  <logoScale>1.2</logoScale>
+		  <logoSize>0.234 0.297</logoSize>
+		  <maxLogoCount>2.5</maxLogoCount>
+		</carousel>
+		<!--
+		<carousel name="systemcarousel">
+		  <type>vertical</type>
+		  <pos>0 0</pos> 
+		  <size>.3 1</size> 
+		  <color>00000060</color>
+		  <logoScale>2</logoScale>
+		  <logoSize>0.125 0.155</logoSize>
+		  <maxLogoCount>5</maxLogoCount>
+		</carousel>
+	 -->
+		<text name="systemInfo">
+		  <backgroundColor>${mainColor}</backgroundColor>
+		  <color>${secondaryColor}</color>
+		  <forceUppercase>0</forceUppercase>
+		  <size>1 0.03</size>
+		  <fontSize>0.03</fontSize>
+		  <pos>0.5 0.615</pos>
+		  <origin>0.5 0.5</origin>
+		  <forceUppercase>0</forceUppercase>
+		  <fontPath>${mainFont}</fontPath>
+		</text>
+
+	</view>
+
+ </feature>
+	 
+</theme>
