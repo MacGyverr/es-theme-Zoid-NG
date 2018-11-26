@@ -25,6 +25,7 @@ place the Zoid-NG folder in /etc/emulationstation/themes/
 
 change theme from emulation station menu
 
+You can add your own help menu .svg files in the helpbuttons folder and customize it to your liking .
 
 Screenshots
 ===========
